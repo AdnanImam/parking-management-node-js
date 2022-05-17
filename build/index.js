@@ -10,6 +10,7 @@ const compression_1 = __importDefault(require("compression"));
 const helmet_1 = __importDefault(require("helmet"));
 const cors_1 = __importDefault(require("cors"));
 const ApiRoutes_1 = __importDefault(require("./routers/ApiRoutes"));
+// import * as swaggerDocument from './swagger.json';
 class App {
     constructor() {
         this.app = (0, express_1.default)();
