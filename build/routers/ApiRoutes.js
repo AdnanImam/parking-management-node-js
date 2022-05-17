@@ -12,7 +12,7 @@ class ApiRoutes {
     }
     routes() {
         this.router.get("/", MainController_1.default.index);
-        this.router.post("/:level", MainController_1.default.create);
+        this.router.post("/:level", MainController_1.default.update);
         this.router.delete("/:level", MainController_1.default.delete);
     }
 }

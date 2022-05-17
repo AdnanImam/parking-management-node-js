@@ -5,6 +5,7 @@ import compression from "compression";
 import helmet from "helmet";
 import cors from "cors";
 import ApiRoutes from "./routers/ApiRoutes";
+import { config as dotenv } from "dotenv";
 import swaggerUI from "swagger-ui-express";
 // import * as swaggerDocument from './swagger.json';
 
@@ -15,6 +16,7 @@ class App {
         this.app = express();
         this.plugins();
         this.routes();
+        dotenv();
     }
 
     protected plugins(): void {
@@ -34,4 +36,5 @@ const port: number = 8000
 const app = new App().app;
 app.listen(port, () => {
     console.log("App listening on port "+port)
+    console.log(process.env.DB_HOST);
 });

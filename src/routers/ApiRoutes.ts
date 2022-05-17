@@ -12,7 +12,7 @@ class ApiRoutes implements IRouter{
 
     public routes(): void {
         this.router.get("/", MainController.index);
-        this.router.post("/:level", MainController.create);
+        this.router.post("/:level", MainController.update);
         this.router.delete("/:level",MainController.delete);
     }
 }

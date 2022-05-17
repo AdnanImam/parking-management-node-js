@@ -10,12 +10,14 @@ const compression_1 = __importDefault(require("compression"));
 const helmet_1 = __importDefault(require("helmet"));
 const cors_1 = __importDefault(require("cors"));
 const ApiRoutes_1 = __importDefault(require("./routers/ApiRoutes"));
+const dotenv_1 = require("dotenv");
 // import * as swaggerDocument from './swagger.json';
 class App {
     constructor() {
         this.app = (0, express_1.default)();
         this.plugins();
         this.routes();
+        (0, dotenv_1.config)();
     }
     plugins() {
         this.app.use(body_parser_1.default.json());
@@ -32,4 +34,5 @@ const port = 8000;
 const app = new App().app;
 app.listen(port, () => {
     console.log("App listening on port " + port);
+    console.log(process.env.DB_HOST);
 });
