@@ -57,3 +57,6 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
     $ npm run ts
     $ npm run dev
 
+## POSTMAN Api Documentation
+
+    https://documenter.getpostman.com/view/12286054/Uyxkj5aD
