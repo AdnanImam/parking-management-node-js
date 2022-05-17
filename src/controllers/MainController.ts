@@ -23,17 +23,6 @@ class MainController implements IController{
         const parking = await db.parking.findOne({
             where: {level : level}
         });
-
-        const current_slot = parking.slot;
-        const new_slott    = parking.slot - 1;
-
-        parking.update({
-            slot : new_slott
-        });
-
-        let data:any[] = [
-            {level: level, slot: current_slot },
-        ];
         
         if (parking.slot == 0) {
             return res.send({
@@ -41,6 +30,17 @@ class MainController implements IController{
                 message: "The parking lot is full",
             });
         } else {
+            const current_slot = parking.slot;
+            const new_slott    = parking.slot - 1;
+    
+            parking.update({
+                slot : new_slott
+            });
+    
+            let data:any[] = [
+                {level: level, slot: current_slot },
+            ];
+            
             return res.send({
                 status : 201,
                 message: "Parking successfully Update",

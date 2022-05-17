@@ -27,14 +27,6 @@ class MainController {
             const parking = yield db.parking.findOne({
                 where: { level: level }
             });
-            const current_slot = parking.slot;
-            const new_slott = parking.slot - 1;
-            parking.update({
-                slot: new_slott
-            });
-            let data = [
-                { level: level, slot: current_slot },
-            ];
             if (parking.slot == 0) {
                 return res.send({
                     status: 202,
@@ -42,6 +34,14 @@ class MainController {
                 });
             }
             else {
+                const current_slot = parking.slot;
+                const new_slott = parking.slot - 1;
+                parking.update({
+                    slot: new_slott
+                });
+                let data = [
+                    { level: level, slot: current_slot },
+                ];
                 return res.send({
                     status: 201,
                     message: "Parking successfully Update",
