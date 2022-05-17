@@ -5,6 +5,8 @@ import compression from "compression";
 import helmet from "helmet";
 import cors from "cors";
 import ApiRoutes from "./routers/ApiRoutes";
+import swaggerUI from "swagger-ui-express";
+// import * as swaggerDocument from './swagger.json';
 
 class App {
     public app: Application;
