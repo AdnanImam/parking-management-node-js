@@ -42,6 +42,15 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
       $ npm install -g yarn
 
 ---
+## Generate Environment
+    After clone project, copy .env.example to .env
+
+## Migrate Database
+    $ ./node_modules/.bin/sequelize-cli db:migrate                                
+
+## Seeder
+    $ ./node_modules/.bin/sequelize-cli db:seed:all
+
 
 ## Running the project
 
